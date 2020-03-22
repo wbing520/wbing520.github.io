@@ -1,0 +1,102 @@
+# ---------------- #
+#   Main Configs   #
+# ---------------- #
+baseurl:
+url: https://wbing520.github.io
+date_format: "ordinal"
+title: 程序人生 · 记录旅程 (David's Blog)
+subtitle: "发现，探索，总结，表达"
+description: "Personal Blog"
+keywords: David, Techonlogy, github pages, Post, North America, Leetcode, Interview
+encoding: "utf-8"
+side_bar_repo_limit: 3
+
+# ---------------- #
+#      Author      #
+# ---------------- #
+author: David
+organization: 
+organization_url: 
+github_username: wbing520
+location: USA
+email: wbing520@gmail.com
+
+# ---------------- #
+#    Navigation    #
+# ---------------- #
+navs:
+  -
+    href: /
+    label: Home
+
+  -
+    href: /categories/
+    label: Categories
+
+#   -
+#     href: /archives/
+#     label: 归档
+
+  -
+    href: /about/
+    label: About
+
+# ---------------- #
+#       RSS        #
+# ---------------- #
+subscribe_rss: /feed.xml
+
+# ---------------- #
+#      Jekyll      #
+# ---------------- #
+markdown: kramdown
+kramdown:
+    input: GFM
+highlighter: rouge
+paginate: 10
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
+permalink: /:year/:month/:day/:title/
+plugins:
+    - jekyll-github-metadata
+    - rouge
+#     - jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jemoji
+    - jekyll-seo-tag
+
+repository: wbing520/coding
+
+# ---------------- #
+#      Comments    #
+# ---------------- #
+# support provider: disqus, gitment, gitalk
+comments_provider: gitalk
+# !!!重要!!! 请修改下面这些信息为你自己申请的
+# !!!Important!!! Please modify infos below to yours
+# https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: wbing520
+    repo: coding
+    clientID: bb0ed5fc2962665ae825
+    clientSecret: c4095ddc599cdcb74b1be800e6e919a34f77c542
+# 在使用其它评论组件时可点击显示 Disqus
+lazy_load_disqus : false
+
+# ---------------- #
+#      Search      #
+# ---------------- #
+simple_jekyll_search:
+    # 是否支持全文搜索
+    fulltext: false
+    # 最多显示多少条搜索结果
+    limit: 10
+
+# ---------------- #
+#    Analytics     #
+# ---------------- #
+# google:
+#     analytics_id: G-D184TLGD2K
