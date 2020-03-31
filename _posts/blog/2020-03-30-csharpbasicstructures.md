@@ -9,14 +9,6 @@ keywords: blog, C#, Data Structures
 C# basic structure is an essential skills when we are programming using C#. 
 
 ``` c#
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LeetCode2019
-{
-    public static class Basic
-    {
 
         public static void BasicDataStructure()
         {
@@ -239,7 +231,4 @@ namespace LeetCode2019
             queue.Clear();
 
         }
-
-    }
-}
 ```
