@@ -8,7 +8,7 @@ keywords: blog, C#, Data Structures
 
 C# basic structure is an essential skills when we are programming using C#. 
 
-```C#
+``` c#
 using System;
 using System.Collections.Generic;
 using System.Text;
