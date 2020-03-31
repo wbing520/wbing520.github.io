@@ -6,6 +6,8 @@ description: Introduce basic C# data structures.
 keywords: blog, C#, Data Structures
 ---
 
+C# basic structure is an essential skills when we are programming using C#. 
+
 ```C#
 using System;
 using System.Collections.Generic;
