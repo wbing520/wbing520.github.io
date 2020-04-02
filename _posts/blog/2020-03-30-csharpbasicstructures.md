@@ -82,9 +82,7 @@ C# basic structure is an essential skills when we are programming using C#.
         //Comment here because of page error.
         //Mix jagged and multidimensional arrays
         // int[][,] arrMix = new int[3][,]
-        // {   new int [,] {{ 1, 3 }, {  5,7 }},
-        //     new int [,] {{ 0, 2}, { 4, 6}, { 8, 9}},
-        //     new int [,] {{10, 11 }, {12, 13 }, {13, 14}, { 15, 16}}
+        // {   
         // };
 
         for (int k = 0; k < arrMix.Length; k++)
