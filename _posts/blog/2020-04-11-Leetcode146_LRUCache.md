@@ -1,7 +1,7 @@
 ---
 layout: post
 title: [Leetcode146] LRU Cache 
-categories: Blog, Leetcode
+categories: Blog Leetcode C#
 description: Introduce basic C# data structures. 
 keywords: blog, C#, leetcode
 ---
