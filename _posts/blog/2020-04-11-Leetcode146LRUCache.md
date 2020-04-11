@@ -1,25 +1,28 @@
 ---
 layout: post
-title: Leetcode146 LRU Cache 
+title: Leetcode146 LRU Cache
 categories: Blog Leetcode C#
-description: Introduce basic C# data structures. 
+description: Introduce basic C# data structures.
 keywords: blog, C#, leetcode
 ---
 
 Design and implement a data structure for Least Recently Used(LRU) cache.  
-It should support the following operations: get and put  
+It should support the following operations: get and put
 
-``` C#
+```C#
 get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
-put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+put(key, value) - Set or insert the value if the key is not already present.
+                    When the cache reached its capacity, it should invalidate the
+                    least recently used item before inserting a new item.
 ```
 
 The cache is initialized with a positive capacity.  
 **Follow up:**
-Could you do both operations in O(1) time complexity?  
+Could you do both operations in O(1) time complexity?
 
-**Example:**  
-``` C#
+**Example:**
+
+```C#
 LRUCache cache = new LRUCache( 2 /* capacity */ );
 
 cache.put(1, 1);
@@ -50,7 +53,7 @@ public interface ILRUCache
 
 Third, here we use a dictionary and a double linked list to implement the functions.
 
-``` C#
+```C#
 /// <summary>
 /// Model class for the double linked list
 /// </summary>
@@ -92,7 +95,7 @@ public class DoubleLinkedNodeHandler{
     /// <summary>
     /// Remove an existing node from the linked list.
     /// </summary>
-    /// <param name="node"></param>  
+    /// <param name="node"></param>
     public void RemoveNode(DoubleLinkedNode node){
         DoubleLinkedNode pre = node.pre;
         DoubleLinkedNode post = node.post;
