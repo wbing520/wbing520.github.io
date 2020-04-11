@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Top C# Basic Structures we should know. 
+title: Top C# Basic Data Structures. 
 categories: Blog
 description: Introduce basic C# data structures. 
 keywords: blog, C#, Data Structures
 ---
 
-C# basic structure is an essential skills when we are programming using C#. 
+C# basic data structure is an essential skills for C# coder. 
 
 ```C#
 
@@ -47,7 +47,6 @@ C# basic structure is an essential skills when we are programming using C#.
         //Multidimensional Arrays, (Rectangular Array)
         int[,] intArray2D = new int[4, 2];  //two dimensional array
         int[,,] intArray3D = new int[4, 2, 3]; // three dimensional array
-
 
         int rows = intArray3D.GetLength(0);
         int cols = intArray3D.GetLength(1);
@@ -104,7 +103,7 @@ C# basic structure is an essential skills when we are programming using C#.
     }
 ``` 
 
-This part is for the basic collection
+This part is for the basic data collection
 ```C# 
 
     /// <summary>
