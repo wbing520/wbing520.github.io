@@ -6,8 +6,11 @@ description: Introduction to the ZooKeeper
 keywords: Tech, ZooKeeper
 ---
 
-# What is ZooKeeper 
+## Apache ZooKeeper Basic Knowledge  Notes
+
 ---
+
+## Introduction
 
 When I asked this question to my 6 years old daughter, she said ZooKeeper is a person, who manages lots of animals in the zoo. This is a great answer, and also my first thought. Generally, when we went to the zoo, we need to buy the tickets at the zoo gate office. The zoo officer would provide a zoo map, which labels different animal areas, cafeteria areas, shopping centers, etc. Also, the officer also checks how many people in the zoo, if it is over the permitted number, we need to wait in a line. If it not, the officer may let us know which area has most of people, and suggest another areas. The officer are also happy to provide any help if we need in the zoo. This is what a ZooKeeper doing in the zoo. They mantain the up-to-date zoo map, name the zoo area, manage the limited people in different area and provide the visitors' services.
 
@@ -37,5 +40,6 @@ What is the Apache ZooKeeper in the technology world? According to the [ZooKeepe
 - Notification System
 
 ## Reference
+
 [1] [ZooKeeper Wiki](https://cwiki.apache.org/confluence/display/ZOOKEEPER/Index).
 [2] [Apache ZooKeeper Wiki](https://en.wikipedia.org/wiki/Apache_ZooKeeper).
