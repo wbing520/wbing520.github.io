@@ -39,7 +39,7 @@ What is the Apache ZooKeeper in the technology world? According to the [ZooKeepe
 - Message Queue
 - Notification System
 
-## Reference
+## Reference  
 
 [1]: [ZooKeeper Wiki](https://cwiki.apache.org/confluence/display/ZOOKEEPER/Index).  
 [2]: [Apache ZooKeeper Wiki](https://en.wikipedia.org/wiki/Apache_ZooKeeper).
