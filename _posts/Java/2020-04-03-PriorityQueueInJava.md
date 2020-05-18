@@ -17,7 +17,7 @@ Priority queue is a queue follows First-In-First-Out rule. The elements of Prior
 Integer [] persons;
 Collections.sort(persons, (lp1, rp2) ->{
     return lp1 - rp2;
-    // Comparater 
+    // Comparator
     // return 1; if rp2 should be before lp1
     // return -1 if lp1 should be before rp2
     // return 0; // keep the same order
