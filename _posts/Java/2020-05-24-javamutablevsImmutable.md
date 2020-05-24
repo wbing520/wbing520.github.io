@@ -24,6 +24,8 @@ Use immuable classes:
 
 ---------------------------------
 
+## Java mutable vs immutable example
+
 ``` Java
 //mutable class
 // 1. provide a method to modify the field values
