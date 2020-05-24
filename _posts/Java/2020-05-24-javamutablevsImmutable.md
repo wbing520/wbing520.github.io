@@ -23,13 +23,14 @@ Use immuable classes:
 - Immutable objects make good building blocks for other objects.
 
 ---------------------------------
+
 ``` Java
 //mutable class
 // 1. provide a method to modify the field values
 // 2. Getter and setter method
 public class mutableExample {
     private String coursename;
-    
+
     public mutableExample(String coursename) {
         this.coursename = coursename;
     }
