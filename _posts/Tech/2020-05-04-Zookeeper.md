@@ -3,7 +3,7 @@ layout: post
 title: What is ZooKeeper?
 categories: Technology
 description: Introduction to the ZooKeeper
-keywords: Tech, ZooKeeper
+keywords: Tech, ZooKeeper, Microservice
 ---
 
 ## Apache ZooKeeper Basic Knowledge  Notes
