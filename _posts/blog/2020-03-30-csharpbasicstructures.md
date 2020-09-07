@@ -226,7 +226,7 @@ This part is for the basic data collection
         queue.Enqueue(1);
         queue.Enqueue(2);
         int countQueue = queue.Count;
-
+        if(queue.Count > 0) Console.WriteLine("Queue is not null. ");
         bool containsVal = queue.Contains(1);
         int itemqueue = queue.Dequeue();
         int itemQ = queue.Peek();
