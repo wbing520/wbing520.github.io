@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Leetcode152] Maximum Product SubArray
+title: Leetcode152 Maximum Product SubArray
 categories: Leetcode
 description: 2020 September 11 Daily challenge
 keywords: Leetcode, DynamicProgramming, medium, Array
