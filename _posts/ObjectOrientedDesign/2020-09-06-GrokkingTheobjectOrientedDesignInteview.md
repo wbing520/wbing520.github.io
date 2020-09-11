@@ -69,7 +69,7 @@ Use case diagrams describe a set of actions (called use cases) that a system sho
     2. It answers what system does from the user point of view
     3. Use case answers "What will the system do?" and at the same time tells us "What will the system Not do?". 
    
-![Sample use-case diagram for online shopping system](https://github.com/wbing520/wbing520.github.io/blob/master/images/OOD/Use%20Case%20Diagrams%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
+![Sample use-case diagram for online shopping system](https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/OOD/Use%20Case%20Diagrams%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
 
 #### Components of the use case diagrams
 
@@ -86,7 +86,7 @@ Use case diagrams describe a set of actions (called use cases) that a system sho
     Class Diagram is the backbone of object-oriented modeling - it shows how different entities(people, things, and data) relate to each other. It shows the static structure of the system.  
 
     A class diagram describes the attributes and operations of a class and also the constraints imposed on the system. 
-![Class](https://github.com/wbing520/wbing520.github.io/blob/master/images/OOD/Class%20Diagram%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
+![Class](https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/OOD/Class%20Diagram%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
 
 #### Purpose
 
@@ -115,7 +115,7 @@ A class is depicted in the class diagram as a rectangle with three horizontal se
   
 * Abstract class: use *italics* for the name.
 
-![UML Convertions](https://github.com/wbing520/wbing520.github.io/blob/master/images/OOD/UML%20Conversion-Class%20Diagram%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview(1).png)
+![UML Convertions](https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/OOD/UML%20Conversion-Class%20Diagram%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview(1).png)
 
 ### Sequence Diagram
 
@@ -128,7 +128,7 @@ Sequence diagrams describe interactions among classes in terms of an exchange of
     1. Vertical dimention shows the sequence of messages in the chronological order that they occur;
     2. Horizontal dimension shows the object instances to which the message are sent.
 
-![An example of sequence diagram](https://github.com/wbing520/wbing520.github.io/blob/master/images/OOD/Sequence%20diagram%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
+![An example of sequence diagram](https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/OOD/Sequence%20diagram%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
 
 #### How to draw
 
@@ -139,7 +139,7 @@ Sequence diagrams describe interactions among classes in terms of an exchange of
 ### Activity Diagrams
 
     Activity diagrams illustrate the flow of control in a system. 
-![Sample Activity diagram for online shopping](https://github.com/wbing520/wbing520.github.io/blob/master/images/OOD/Activity%20Diagrams%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
+![Sample Activity diagram for online shopping](https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/OOD/Activity%20Diagrams%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
 
 #### Activity diagram vs Sequence diagram
 
