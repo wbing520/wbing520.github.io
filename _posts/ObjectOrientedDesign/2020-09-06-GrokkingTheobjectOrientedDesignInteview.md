@@ -97,7 +97,7 @@ Use case diagrams describe a set of actions (called use cases) that a system sho
 
 A class is depicted in the class diagram as a rectangle with three horizontal sections, class name, properies of class, methods of class.
 
-![Sample class diagram for flight reservation system](https://github.com/wbing520/wbing520.github.io/blob/master/images/OOD/FightReserveSystem_Class%20Diagram%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
+![Sample class diagram for flight reservation system](https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/OOD/FightReserveSystem_Class%20Diagram%20-%20Grokking%20the%20Object%20Oriented%20Design%20Interview.png)
 
 #### Different types of relationships between classes
 

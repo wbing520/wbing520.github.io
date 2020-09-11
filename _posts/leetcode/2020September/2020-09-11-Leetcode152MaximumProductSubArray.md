@@ -19,7 +19,7 @@ keywords: Leetcode, DynamicProgramming, medium, Array
 ```Java
 // O(n * n) time complexity to loop the array twice and find the max product subarray
 class Solution {
-    // Brute Force: use two loop to find the max result 
+    // Brute Force: use two loop to find the max result
     public int maxProduct(int[] nums) {
         if(nums == null || nums.length <= 0) return 0;
         
