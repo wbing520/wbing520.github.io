@@ -48,6 +48,10 @@ For example:
 to setup the password. 
 12)Rerun the Jupyter-notebook and we could see it up and running like followings. 
 
-Here are the pictures.
-
 ```
+
+Here are the pictures.
+![Jupyter home page](
+https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/programmingLanguage/Jupyter_Notebook_homepage.PNG)
+
+![Hello world](https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/programmingLanguage/Jupyter_Notebook_helloworld.PNG)
