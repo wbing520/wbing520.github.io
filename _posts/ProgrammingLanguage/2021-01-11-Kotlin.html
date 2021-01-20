@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021-01-11-Kotlin.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="what-is-kotlin">What is Kotlin</h2>
+<p>Kotlin is a typed programming language, whose datatype of every experession is known at compile time. Kotlin developed by JetBrains. It is interoperable with Java, which means all Java libraries and frameworks could be used in Kotlin, and vice versa. The major usage is for Android application development.</p>
+<h2 id="variables-and-data-types">Variables and Data Types</h2>
+<h3 id="mutable-variables-use-var-keyword">Mutable variables: use <strong>var</strong> keyword</h3>
+<p>Mutable: variable can be changed to a different value after initialized.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> num = <span class="hljs-number">8</span>
+println(<span class="hljs-string">"number = <span class="hljs-variable">$number</span>"</span>)
+</div></code></pre>
+<h3 id="read-only-variables-use-val-keyword">Read-Only Variables: use <strong>val</strong> keyword</h3>
+<p>Read-only: means variable cann't be reassigned once initialized.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> num = <span class="hljs-number">9</span>
+
+num = <span class="hljs-number">10</span> <span class="hljs-comment">// throws an exception</span>
+</div></code></pre>
+<h2 id="basic-data-types--can-not-be-null">Basic Data Types : can not be null</h2>
+<h3 id="integers-byte-short-int-long">Integers: Byte, Short, Int, Long</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// the type reference are optional, when declare the variables.</span>
+<span class="hljs-keyword">val</span> byte: <span class="hljs-built_in">Byte</span> = <span class="hljs-number">127</span>
+<span class="hljs-keyword">val</span> short: <span class="hljs-built_in">Short</span> = <span class="hljs-number">32767</span>
+<span class="hljs-keyword">val</span> int: <span class="hljs-built_in">Int</span> = <span class="hljs-number">2147483647</span>
+<span class="hljs-keyword">val</span> long: <span class="hljs-built_in">Long</span> = <span class="hljs-number">9223372036854775807</span>
+</div></code></pre>
+<h3 id="floating-point-numbers-float-double">Floating Point Numbers: Float, Double</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> float: <span class="hljs-built_in">Float</span> = <span class="hljs-number">3.4028235e38f</span> <span class="hljs-comment">//with f</span>
+<span class="hljs-keyword">val</span> double: <span class="hljs-built_in">Double</span> = <span class="hljs-number">1.7976931348623157e308</span>
+</div></code></pre>
+<h3 id="text-char-string">Text: Char, String</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> character: <span class="hljs-built_in">Char</span> = <span class="hljs-string">'#'</span>
+<span class="hljs-keyword">val</span> text: String = <span class="hljs-string">"Learning about Kotlin's data types"</span>
+</div></code></pre>
+<h3 id="booleans-boolean">Booleans: Boolean</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> yes: <span class="hljs-built_in">Boolean</span> = <span class="hljs-literal">true</span>
+<span class="hljs-keyword">val</span> no: <span class="hljs-built_in">Boolean</span> = <span class="hljs-literal">false</span>
+</div></code></pre>
+<h2 id="nullable-types-denoted-as-type">Nullable Types: denoted as Type?</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> input: String? = <span class="hljs-literal">null</span>
+
+<span class="hljs-keyword">val</span> output = input.toUpperCase()  <span class="hljs-comment">// Compile-time error: unsafe call on nullable object</span>
+
+<span class="hljs-keyword">val</span> output = input?.toUpperCase()  <span class="hljs-comment">// Works and returns null</span>
+</div></code></pre>
+<h3 id="elvis-operator--or-else">Elvis Operator: <strong>?:</strong> or else</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> name: String? = <span class="hljs-literal">null</span>
+
+<span class="hljs-keyword">val</span> chatName = name ?: <span class="hljs-string">"Anonymous"</span>  <span class="hljs-comment">// Elvis operator</span>
+<span class="hljs-keyword">val</span> displayName = chatName.toUpperCase()
+</div></code></pre>
+<h3 id="unsafe-call-operator">Unsafe Call Operator: <strong>!!</strong></h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> input: String? = <span class="hljs-literal">null</span>
+
+<span class="hljs-keyword">val</span> output = input!!.toUpperCase()
+</div></code></pre>
+<h2 id="conditions-if-else-if-else-when-like-switch">Conditions: if-else if-else;  when like switch</h2>
+<h3 id="if-else-if-else-same-as-java">if-else if-else same as Java</h3>
+<p>== : Structural euqality
+!= : Structural inequality
+===: Referential equality
+!==: Referential inequality</p>
+<h3 id="condition-using-when">condition using when</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">when</span> (planet) {
+  <span class="hljs-string">"Jupiter"</span> -&gt; println(<span class="hljs-string">"Radius of Jupiter is 69,911km"</span>)
+  <span class="hljs-string">"Saturn"</span>  -&gt; println(<span class="hljs-string">"Radius of Saturn is 58,232km"</span>)
+  <span class="hljs-keyword">else</span>      -&gt; println(<span class="hljs-string">"No data for planet <span class="hljs-variable">$planet</span>"</span>)
+}
+</div></code></pre>
+<h2 id="collections-types-lists-sets-arrays-maps">Collections Types: Lists, Sets, Arrays, Maps</h2>
+<h3 id="read-only-vs-mutable-lists-immutability">Read-Only VS Mutable Lists (Immutability)</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:left">val</th>
+<th style="text-align:right">var</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read-only collection</td>
+<td style="text-align:left">Canot reassign variable or change values stored in variable(&quot;immutable&quot;)</td>
+<td style="text-align:right">Can reassign the variable(to a whole different collection) but can't overwrite the values in the original collection</td>
+</tr>
+<tr>
+<td>Mutable collection</td>
+<td style="text-align:left">Cannot reassign variable but can freely change the values stored in the variable</td>
+<td style="text-align:right">Can both reassign the variable and change values in the collection it stores</td>
+</tr>
+</tbody>
+</table>
+<p>In Kotlin, every collection type has a mutable and read-only variant, as portaryed in the following diagram.
+<img src="https://raw.githubusercontent.com/wbing520/wbing520.github.io/master/images/programmingLanguage/Screenshot_2021-01-11 Lists - Kotlin Crash Course for Programmers.png" alt="Collections Types"></p>
+<h3 id="lists-listof-mutablelistof-arraylistof">Lists: listOf(), mutableListOf(), arrayListOf()</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> siUnits = listOf(<span class="hljs-string">"s"</span>, <span class="hljs-string">"m"</span>, <span class="hljs-string">"kg"</span>, <span class="hljs-string">"A"</span>, <span class="hljs-string">"K"</span>, <span class="hljs-string">"mol"</span>, <span class="hljs-string">"cd"</span>)     <span class="hljs-comment">// Creates readonly list List&lt;String&gt;</span>
+<span class="hljs-keyword">val</span> quarks = mutableListOf(<span class="hljs-string">"up"</span>, <span class="hljs-string">"down"</span>, <span class="hljs-string">"charm"</span>, <span class="hljs-string">"strange"</span>, <span class="hljs-string">"top"</span>, <span class="hljs-string">"bottom"</span>) <span class="hljs-comment">// Creates mutable list  MutableList&lt;String&gt;</span>
+<span class="hljs-keyword">val</span> physicists = arrayListOf(<span class="hljs-string">"Albert Einstein"</span>, <span class="hljs-string">"Isaac Newton"</span>)      <span class="hljs-comment">// Creates mutable list ArrayList&lt;String&gt;</span>
+
+<span class="hljs-comment">//Accessing the elements</span>
+<span class="hljs-keyword">val</span> siUnit = siUnit[<span class="hljs-number">2</span>]            <span class="hljs-comment">// Gets 3rd element of siUnits</span>
+<span class="hljs-keyword">val</span> quark = quarks[<span class="hljs-number">0</span>]             <span class="hljs-comment">// Gets 1st element of quarks</span>
+<span class="hljs-comment">// val physicist = physicists[3]  // Would cause an error because there is no 4th element in the physicists</span>
+
+<span class="hljs-comment">//Manipulating Elements</span>
+<span class="hljs-comment">// siUnit[1] = "meter"          // Would cause error because siUnits is readonly</span>
+quarks[<span class="hljs-number">2</span>] = <span class="hljs-string">"CHARM"</span>             <span class="hljs-comment">// Overwrites 3rd element of quarks</span>
+physicists[<span class="hljs-number">1</span>] = <span class="hljs-string">"Marie Curie"</span>   <span class="hljs-comment">// Overwrites 2nd element of physicists</span>
+
+</div></code></pre>
+<h3 id="sets-no-sequences-cannot-contain-duplicates">Sets: no sequences, cannot contain duplicates</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">//create a set</span>
+<span class="hljs-keyword">val</span> awards = setOf(<span class="hljs-string">"World's Best Programmer 2019"</span>, <span class="hljs-string">"Best Programming Language 2020"</span>)
+<span class="hljs-keyword">val</span> members = mutableSetOf(<span class="hljs-string">"Susan"</span>, <span class="hljs-string">"Jake"</span>, <span class="hljs-string">"Jenny"</span>)
+<span class="hljs-comment">// other APIs</span>
+    &lt;!-- hashSetOf(...)
+    linkedSetOf(...)
+    sortedSetOf(...) --&gt;
+
+<span class="hljs-comment">//Accessing elements in a set</span>
+<span class="hljs-keyword">val</span> members = mutableSetOf(<span class="hljs-string">"Susan"</span>, <span class="hljs-string">"Jake"</span>, <span class="hljs-string">"Jenny"</span>)
+println(members[<span class="hljs-number">0</span>])  <span class="hljs-comment">// Causes compile-time error</span>
+
+members.add(<span class="hljs-string">"Greg"</span>)
+members.remove(<span class="hljs-string">"Jake"</span>)
+members.clear()
+members.addAll(setOf(<span class="hljs-string">"Adam"</span>, <span class="hljs-string">"Eve"</span>))
+
+</div></code></pre>
+<h3 id="array-arrayof">Array: arrayOf()</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> priorities = arrayOf(<span class="hljs-string">"HIGH"</span>, <span class="hljs-string">"MEDIUM"</span>, <span class="hljs-string">"LOW"</span>)
+println(priorities[<span class="hljs-number">1</span>])
+priorities[<span class="hljs-number">1</span>] = <span class="hljs-string">"NORMAL"</span>
+println(priorities[<span class="hljs-number">1</span>])
+println(priorities.size)
+
+</div></code></pre>
+<h3 id="maps">Maps</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> grades = mapOf(
+  <span class="hljs-string">"Kate"</span> to <span class="hljs-number">3.9</span>,
+  <span class="hljs-string">"Jake"</span> to <span class="hljs-number">3.4</span>,
+  <span class="hljs-string">"Susan"</span> to <span class="hljs-number">3.5</span>
+)
+
+<span class="hljs-keyword">val</span> grades = mapOf(
+  Pair(<span class="hljs-string">"Kate"</span>, <span class="hljs-number">3.9</span>),
+  Pair(<span class="hljs-string">"Jake"</span>, <span class="hljs-number">3.4</span>),
+  Pair(<span class="hljs-string">"Susan"</span>, <span class="hljs-number">3.5</span>)
+)
+
+<span class="hljs-comment">//creating a mutable map</span>
+<span class="hljs-keyword">val</span> enrollments = mutableMapOf(
+  <span class="hljs-string">"Kate"</span> to listOf(<span class="hljs-string">"Maths"</span>, <span class="hljs-string">"Engineering"</span>),
+  <span class="hljs-string">"Jake"</span> to listOf(<span class="hljs-string">"CS"</span>, <span class="hljs-string">"Bioengineering"</span>, <span class="hljs-string">"Psychology"</span>),
+  <span class="hljs-string">"Susan"</span> to listOf(<span class="hljs-string">"Engineering"</span>, <span class="hljs-string">"Psychology"</span>)
+)
+
+<span class="hljs-keyword">val</span> marcusClasses = enrollments.getOrDefault(<span class="hljs-string">"Marcus"</span>, emptyList())
+println(marcusClasses)   <span class="hljs-comment">// [], not null</span>
+
+<span class="hljs-keyword">val</span> simonsClasses = enrollments.getOrElse(<span class="hljs-string">"Simon"</span>, {
+    <span class="hljs-comment">/* compute... */</span>
+    emptyList()
+})
+println(simonsClasses)   <span class="hljs-comment">// [], not null</span>
+
+enrollments.put(<span class="hljs-string">"Marcus"</span>, listOf(<span class="hljs-string">"Maths"</span>, <span class="hljs-string">"CS"</span>))
+
+<span class="hljs-comment">// Can be written more idiomatically as:</span>
+enrollments[<span class="hljs-string">"Marcus"</span>] = listOf(<span class="hljs-string">"Maths"</span>, <span class="hljs-string">"CS"</span>)
+
+enrollments.remove(<span class="hljs-string">"Jake"</span>)
+
+enrollments[<span class="hljs-string">"Susan"</span>] = listOf(<span class="hljs-string">"CS"</span>, <span class="hljs-string">"Psychology"</span>)
+
+
+</div></code></pre>
+<h2 id="loops-while-dowhile-for-loops">Loops: while, do{}while(), for loops</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (number <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>..<span class="hljs-number">5</span>) println(number)        <span class="hljs-comment">// 1, 2, 3, 4, 5</span>
+
+<span class="hljs-keyword">for</span> (number <span class="hljs-keyword">in</span> <span class="hljs-number">1</span> until <span class="hljs-number">5</span>) println(number)   <span class="hljs-comment">// 1, 2, 3, 4</span>
+
+<span class="hljs-keyword">for</span> (number <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>..<span class="hljs-number">5</span> step <span class="hljs-number">2</span>) println(number) <span class="hljs-comment">// 1, 3, 5</span>
+
+<span class="hljs-keyword">for</span> (number <span class="hljs-keyword">in</span> <span class="hljs-number">5</span> downTo <span class="hljs-number">1</span>) println(number)  <span class="hljs-comment">// 5, 4, 3, 2, 1</span>
+
+<span class="hljs-keyword">for</span> (number <span class="hljs-keyword">in</span> <span class="hljs-number">5</span> downTo <span class="hljs-number">1</span> step <span class="hljs-number">2</span>) println(number)  <span class="hljs-comment">// 5, 3, 1</span>
+
+<span class="hljs-keyword">for</span> (char <span class="hljs-keyword">in</span> <span class="hljs-string">'a'</span>..<span class="hljs-string">'c'</span>) println(char)        <span class="hljs-comment">// 'a', 'b', 'c'</span>
+
+<span class="hljs-keyword">for</span> (planet <span class="hljs-keyword">in</span> planets) println(planet)     <span class="hljs-comment">// "Jupiter", "Saturn", ...</span>
+
+<span class="hljs-keyword">for</span> (char <span class="hljs-keyword">in</span> <span class="hljs-string">"Venus"</span>) println(char)         <span class="hljs-comment">// 'V', 'e', 'n', 'u', 's'</span>
+
+
+</div></code></pre>
+<h2 id="functions">Functions</h2>
+<h3 id="basic-functions">Basic Functions</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">//function signatures</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">fibonacci</span><span class="hljs-params">(index: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Long</span>
+
+<span class="hljs-comment">//declaring a function</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">fibonacci</span><span class="hljs-params">(index: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Long</span> {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">if</span> (index &lt; <span class="hljs-number">2</span>) {
+    <span class="hljs-number">1</span>
+  } <span class="hljs-keyword">else</span> {
+    fibonacci(index-<span class="hljs-number">2</span>) + fibonacci(index-<span class="hljs-number">1</span>)  <span class="hljs-comment">// Calls `fibonacci` recursively</span>
+  }
+}
+
+<span class="hljs-comment">//call a function</span>
+<span class="hljs-keyword">val</span> output = fibonacci(<span class="hljs-number">6</span>)
+println(output);
+
+
+</div></code></pre>
+<h3 id="the-main-function">The main() function</h3>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+  <span class="hljs-comment">// Your code here...</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+  <span class="hljs-comment">// Your code here...</span>
+}
+
+</div></code></pre>
+<h3 id="shorthand-functions">Shorthand Functions</h3>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">isValidUsername</span><span class="hljs-params">(username: <span class="hljs-type">String</span>)</span></span>: <span class="hljs-built_in">Boolean</span> {
+  <span class="hljs-keyword">return</span> username.length &gt;= <span class="hljs-number">3</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">isValidUsername</span><span class="hljs-params">(username: <span class="hljs-type">String</span>)</span></span>: <span class="hljs-built_in">Boolean</span> = username.length &gt;= <span class="hljs-number">3</span>
+
+</div></code></pre>
+<h3 id="default-values--named-parameters">Default Values &amp; Named Parameters</h3>
+<pre class="hljs"><code><div><span class="hljs-comment">//Default Parameter Values</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">join</span><span class="hljs-params">(strings: <span class="hljs-type">Collection</span>&lt;<span class="hljs-type">String</span>&gt;, delimiter: <span class="hljs-type">String</span> = <span class="hljs-string">", "</span>)</span></span> = strings.joinToString(delimiter)
+
+<span class="hljs-comment">//Named Parameters</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">join</span><span class="hljs-params">(strings: <span class="hljs-type">Collection</span>&lt;<span class="hljs-type">String</span>&gt;, delimiter: <span class="hljs-type">String</span> = <span class="hljs-string">", "</span>)</span></span> = strings.joinToString(delimiter)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+  <span class="hljs-keyword">val</span> planets = listOf(<span class="hljs-string">"Saturn"</span>, <span class="hljs-string">"Jupiter"</span>, <span class="hljs-string">"Earth"</span>, <span class="hljs-string">"Uranus"</span>)
+
+  <span class="hljs-keyword">val</span> joined1 = join(planets, delimiter = <span class="hljs-string">" - "</span>)
+  <span class="hljs-keyword">val</span> joined2 = join(strings = planets)
+  <span class="hljs-keyword">val</span> joined3 = join(strings = planets, delimiter = <span class="hljs-string">" - "</span>)
+  <span class="hljs-keyword">val</span> joined4 = join(delimiter = <span class="hljs-string">", "</span>, strings = planets)
+
+  println(joined1)
+  println(joined2)
+  println(joined3)
+  println(joined4)
+}
+
+</div></code></pre>
+<h3 id="extension-functions">Extension Functions</h3>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">fun</span> Number.<span class="hljs-title">print</span><span class="hljs-params">()</span></span> = println(<span class="hljs-string">"<span class="hljs-variable">$this</span> is a Number"</span>)
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-built_in">Int</span>.<span class="hljs-title">print</span><span class="hljs-params">()</span></span> = println(<span class="hljs-string">"<span class="hljs-variable">$this</span> is an Int"</span>)
+
+<span class="hljs-keyword">val</span> num: Number = <span class="hljs-number">17</span>
+num.print()  <span class="hljs-comment">// Prints "17 is a Number"</span>
+
+</div></code></pre>
+<h3 id="infix-functionsan-infix-function-must-have-exactly-two-parameters">Infix Functions:an infix function must have exactly two parameters</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">val</span> str = <span class="hljs-string">"Ho "</span>
+str.repeat(<span class="hljs-number">3</span>)
+
+<span class="hljs-keyword">infix</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-built_in">Int</span>.<span class="hljs-title">times</span><span class="hljs-params">(str: <span class="hljs-type">String</span>)</span></span> = str.repeat(<span class="hljs-keyword">this</span>)
+
+<span class="hljs-keyword">val</span> greeting = <span class="hljs-number">3</span> times <span class="hljs-string">"Ho "</span>
+println(greeting)
+
+&lt;!-- 
+Infix functions must…
+
+    be either member functions or extension functions.
+    have exactly one additional parameter <span class="hljs-keyword">in</span> the function signature (<span class="hljs-keyword">in</span> addition to the extended <span class="hljs-class"><span class="hljs-keyword">class</span>, <span class="hljs-type">which acts as the first parameter’s type).</span></span>
+    not have varargs or <span class="hljs-keyword">default</span> values. --&gt;
+
+</div></code></pre>
+<h3 id="operator-functions-define-the-meaning-of-well-known-symbols-such-as--or---as-other-functions">Operator Functions: define the meaning of well-known symbols such as + or - as other functions.</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-built_in">Int</span>.<span class="hljs-title">times</span><span class="hljs-params">(str: <span class="hljs-type">String</span>)</span></span> = str.repeat(<span class="hljs-keyword">this</span>)
+
+<span class="hljs-keyword">val</span> greeting = <span class="hljs-number">3</span> * <span class="hljs-string">"Ho "</span>
+</div></code></pre>
+<p>Reference: <a href="https://www.educative.io/">Education.io</a></p>
+
+</body>
+</html>

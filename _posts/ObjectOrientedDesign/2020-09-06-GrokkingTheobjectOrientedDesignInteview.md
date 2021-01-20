@@ -16,13 +16,13 @@ Class: Class is the prototype or blueprint of an object. It is a template defini
 
 ## The principles of OOP: Encapsulation, Abstraction, Inheritance, and Polymorphism
 
-Encapsulation: Encapsulation is the mechanism of binding the data together and hiding it from the outside world. Encapsulation is achieved when each object keeps its state private so that other objects don't have direct access to its state. Instead, they can access this state only through a set of public functions.
+**Encapsulation**: Encapsulation is the mechanism of binding the data together and hiding it from the outside world. Encapsulation is achieved when each object keeps its state private so that other objects don't have direct access to its state. Instead, they can access this state only through a set of public functions.
 
-Abstraction: It means hiding all but the relevant data about an object in order to reduce the complexity of the system. Abstraction helps by hiding internal implementation details of objects and only revealing operations that are relevant to other objects.
+**Abstraction**: It means hiding all but the relevant data about an object in order to reduce the complexity of the system. Abstraction helps by hiding internal implementation details of objects and only revealing operations that are relevant to other objects.
 
-Inheritance: Inheritance is the mechanism of creating new classes from existing ones.
+**Inheritance**: Inheritance is the mechanism of creating new classes from existing ones.
 
-Polymorphism: Polymorphism means many forms. It is the ability of an object to take differenct forms and thus, depending upon the context, to respond to the same message in different ways.
+**Polymorphism**: Polymorphism means many forms. It is the ability of an object to take differenct forms and thus, depending upon the context, to respond to the same message in different ways.
 
 ## OO Analysis and Design
 
